@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Charan D – Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e10;--surface:#151518;--line:#26262b;--text:#ececf1;--muted:#a3a3b0;--accent:#8b6cf0;--accent-soft:#b9a6ff;color-scheme:dark;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f6fb;--surface:#fff;--line:#dedbea;--text:#17151f;--muted:#5d5a6e;--accent:#6a47d9;--accent-soft:#6a47d9;color-scheme:light}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:9}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-weight:600;text-decoration:none}
+nav{display:flex;gap:22px;font-size:14px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--text)}
+.hero{padding:clamp(48px,10vh,96px) 0 40px}
+.hi{color:var(--muted);margin:0 0 6px;font-size:1.05rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px 48px;align-items:center}
+h1{font-size:clamp(3rem,8vw,5.2rem);line-height:.98;font-weight:500;margin:0;letter-spacing:-.02em}
+.tag{font-size:clamp(1.15rem,2.2vw,1.6rem);color:var(--muted);margin:0;max-width:30ch}
+.tag em{font-style:normal;color:var(--accent-soft)}
+.socials{display:flex;gap:10px;margin-top:40px}
+.ico{width:74px;height:74px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);border-radius:16px;transition:border-color .2s}
+.ico:hover{border-color:var(--accent)}
+.ico svg{width:34px;height:34px;fill:currentColor}
+.marquee{overflow:hidden;margin:56px 0 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.tech{display:flex;align-items:center;gap:10px;font-weight:500;font-size:1.15rem;color:var(--muted);white-space:nowrap}
+.tile{width:30px;height:30px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:600;color:#111}
+section{padding:72px 0}
+h2{font-size:clamp(1.9rem,4vw,2.5rem);font-weight:600;margin:0 0 32px;letter-spacing:-.01em}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+details{border:1px solid var(--line);background:var(--surface);border-radius:18px;margin-bottom:16px}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:22px 24px;font-size:1.15rem;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-left:auto;width:9px;height:9px;border:solid var(--muted);border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+summary svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;flex:none}
+details p{margin:0;padding:0 24px 22px 66px;color:var(--muted)}
+.glitch{width:100%;height:340px;display:block;mask-image:radial-gradient(ellipse at center,#000 45%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse at center,#000 45%,transparent 100%)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:26px}
+.card h3{margin:0 0 12px;font-size:1.15rem;font-weight:600}
+.card ul{margin:0 0 14px;padding-left:20px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent-soft)}
+.edu p{margin:2px 0;color:var(--muted)}
+.edu h3{margin:0;font-size:1.2rem;font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{padding:12px 24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{border-color:var(--accent)}
+.contact p{color:var(--muted);max-width:52ch;margin:0 0 20px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+@media (max-width:760px){.hero-grid,.split{grid-template-columns:1fr}.ico{width:60px;height:60px}details p{padding-left:24px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Charan D</a>
+  <nav aria-label="Primary"><a href="#what">What I do</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <p class="hi">Hi, I’m Charan D</p>
+  <div class="hero-grid">
+    <h1>Full Stack Developer</h1>
+    <p class="tag">Building web applications with Django and the MERN stack, with a growing focus on <em>backend</em> development and AI.</p>
+  </div>
+  <div class="socials">
+    <a class="ico" href="https://github.com/Charandhana" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+    <a class="ico" href="https://www.linkedin.com/in/charan-d-218b5243b" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
+    <a class="ico" href="mailto:charandhana177@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5H19V8.9l-7 5.2-7-5.2V20H3.5A1.5 1.5 0 0 1 2 18.5v-13Zm1.2.2L12 12.2l8.8-6.5Z"/></svg></a>
+  </div>
+  <div class="marquee" aria-label="Technologies I use"><div class="track" id="track"></div></div>
+</div>
+
+<section id="what"><div class="wrap">
+  <div class="split">
+    <div>
+      <h2>What I do?</h2>
+      <details name="what" open><summary><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></svg>Backend Development</summary><p>REST APIs, authentication and data models with Django, Node.js and Express.js.</p></details>
+      <details name="what"><summary><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 17h6"/></svg>Full-Stack Web Apps</summary><p>End-to-end applications on the MERN stack and Django, from React interfaces to the database.</p></details>
+      <details name="what"><summary><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Databases</summary><p>Designing and querying data in MySQL and MongoDB.</p></details>
+    </div>
+    <canvas class="glitch" id="glitch" aria-hidden="true"></canvas>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="proj-grid">
+    <article class="card"><h3>Eventra – College Events Management Platform</h3>
+      <ul><li>Centralized platform for symposiums and cultural events.</li><li>Event discovery, student registration and organizer management.</li><li>Simple participation for students, easy coordination for organizers.</li></ul></article>
+    <article class="card"><h3>Student Internship &amp; Placement Portal</h3>
+      <ul><li>Full-stack MERN app connecting students with opportunities.</li><li>Registration, login and authentication.</li><li>REST API layer and MongoDB data models.</li></ul>
+      <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span></div></article>
+    <article class="card"><h3>ShopEase – E-Commerce Website</h3>
+      <ul><li>Product listings and a shopping cart.</li><li>User authentication and order management.</li></ul>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></article>
+    <article class="card"><h3>TaskFlow – Project Management App</h3>
+      <ul><li>Create projects; assign, edit and delete tasks.</li><li>Kanban-style board to track progress.</li></ul>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></article>
+  </div>
+</div></section>
+
+<section id="education" class="edu"><div class="wrap">
+  <h2>Education</h2>
+  <h3>Jerusalem College of Engineering, Chennai</h3>
+  <p>B.Tech, Information Technology</p><p>2024 – 2028</p>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let’s work together</h2>
+  <p>I’m looking for a software development internship where I can contribute to real-world projects.</p>
+  <div class="btns"><a class="btn primary" href="mailto:charandhana177@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/charan-d-218b5243b" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Charandhana" target="_blank" rel="noopener">GitHub</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Charan D. Layout inspired by the open-source DarkMinimal template.</div></footer>
+
+<script>
+(function(){
+  var techs=[["Python","Py","#ffd43b"],["Java","Jv","#f89820"],["C++","C+","#6c9bd2"],["JavaScript","JS","#f7df1e"],["Django","Dj","#44b78b"],["Node.js","N","#68a063"],["Express.js","Ex","#d4d4d8"],["React","Re","#61dafb"],["MongoDB","Mo","#47a248"],["MySQL","My","#00a1d6"],["Git","Gi","#f05032"],["GitHub","Gh","#d4d4d8"]];
+  var h="";for(var k=0;k<2;k++)techs.forEach(function(t){h+='<span class="tech"><span class="tile" style="background:'+t[2]+'">'+t[1]+'</span>'+t[0]+'</span>'});
+  document.getElementById("track").innerHTML=h;
+
+  var cv=document.getElementById("glitch"),ctx=cv.getContext("2d");
+  var pal=["#2a1f5a","#4c35b0","#8b6cf0","#c4b5ff"],chars="ABCDEFGHJKLMNPQRSTUVWXYZ0123456789{}[]()<>+-=/\\#$%&*;:",cw=11,ch=19,cols,rows,cells,w,hgt;
+  function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+  function size(){var d=window.devicePixelRatio||1;w=cv.clientWidth;hgt=cv.clientHeight;cv.width=w*d;cv.height=hgt*d;ctx.setTransform(d,0,0,d,0,0);
+    cols=Math.ceil(w/cw);rows=Math.ceil(hgt/ch);cells=[];for(var i=0;i<cols*rows;i++)cells.push([rnd(chars),rnd(pal)]);draw()}
+  function draw(){ctx.clearRect(0,0,w,hgt);ctx.font="500 14px ui-monospace,Menlo,Consolas,monospace";ctx.textBaseline="top";
+    for(var i=0;i<cells.length;i++){ctx.fillStyle=cells[i][1];ctx.fillText(cells[i][0],(i%cols)*cw,Math.floor(i/cols)*ch)}}
+  size();addEventListener("resize",size);
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(function(){
+    for(var n=0;n<Math.ceil(cells.length*.04);n++){var c=cells[Math.floor(Math.random()*cells.length)];c[0]=rnd(chars);c[1]=rnd(pal)}draw()},90);
+})();
+</script>
+</body>
+</html>
